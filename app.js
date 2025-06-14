@@ -59,6 +59,7 @@ function clickSearch(event) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   return days[date.getDay()];
 }
 
@@ -87,7 +88,9 @@ function displayForecast(response) {
       <div class="weather-forcast-temperature">
         <strong>${Math.round(day.temperature.maximum)}°</strong>
       </div>
-      <div class="weather-forcast-temperature">10°</div>
+      <div class="weather-forcast-temperature">${Math.round(
+        day.temperature.minimum
+      )}°</div>
     </div>
   </div>
 `;
